@@ -150,7 +150,7 @@
                                     <td>{{ $product->quantity }}</td>
                                     <td>{{ $product->price }}</td>
                                     <td>
-                                        <img src="{{ asset('/product/' . $product->image) }}" alt="Product Image">
+                                        <img src="{{ asset('product/' . $product->image) }}" alt="Product Image">
 
 
 

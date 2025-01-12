@@ -180,7 +180,7 @@
                             <div class="div_design">
                                 <label class="label">Product Price : </label>
                                 <input class="text_color" type="number" name="price" placeholder="Write a Price"
-                                    required="">
+                                    required="" step="any">
                             </div>
 
                             <div class="div_design">

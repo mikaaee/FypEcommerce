@@ -30,7 +30,7 @@
                             </div>
                         </div>
                         <div class="img-box">
-                            <img src="{{ asset('storage/product/' . $product->image) }}" alt="Product Image">
+                            <img src="{{ asset('/product/' . $product->image) }}" alt="Product Image">
 
 
                         </div>

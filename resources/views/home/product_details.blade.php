@@ -201,7 +201,7 @@
         <!-- Product Details Section -->
         <main class="product-details">
             <div class="product-image">
-                <img src="{{ asset('storage/product/' . $product->image) }}" alt="Product Image">
+                <img src="{{ asset('/product/' . $product->image) }}" alt="Product Image">
 
 
             </div>

@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Header</title>
     <link href="https://fonts.googleapis.com/css2?family=Gabarito&display=swap" rel="stylesheet">
+    <link href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css" rel="stylesheet">
+
 
     <style>
 
@@ -19,14 +21,14 @@
             background-color: #f7d5dc;
             color: #333;
             width: 100%;
-            padding: 0;
+            padding: 10px 0;
             /* Remove any padding that might interfere */
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 2px solid #ddd;
             position: relative;
-            /* Ensure it takes up the full height */
+            
         }
 
         .navbar {
@@ -58,7 +60,6 @@
             /* Adds some padding to make it look better */
             font-size: 12px;
             background-color: #fff;
-            /* Red background */
             color: #000;
             border: none;
             transition: background-color 0.3s ease;
@@ -67,7 +68,7 @@
 
         .btn-logout:hover {
             background-color: #464646;
-            /* Darker red on hover */
+            color: #fff;
         }
 
         /* Style for the year display */
@@ -144,7 +145,7 @@
                             @auth
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf <!-- CSRF Token for security -->
-                                    <button type="submit" class="btn-logout btn-danger">LOGOUT</button>
+                                    <button type="submit" class="btn-logout">LOGOUT</button>
                                 </form>
                             @else
                                 <li class="nav-item">

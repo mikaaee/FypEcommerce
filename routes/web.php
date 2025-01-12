@@ -46,10 +46,12 @@ Route::post('/update_category/{id}', [AdminController::class, 'update_category']
 Route::get('/delete_category/{id}', [AdminController::class, 'delete_category']);
 
 // Route for viewing products
-Route::get('/view_product', [AdminController::class, 'view_product']);
+Route::get('/view-product/{id}', [AdminController::class, 'view'])->name('view_product');
+
 
 // Route for adding products
-Route::post('/add_product', [AdminController::class, 'add_product']);
+Route::get('/add_product', [AdminController::class, 'showAddProductPage'])->name('show_add_product');
+Route::post('/add_product', [AdminController::class, 'add_product'])->name('add_product.submit');
 
 // Route for showing products
 Route::get('/show_product', [AdminController::class, 'show_product']);

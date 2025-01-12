@@ -60,7 +60,7 @@
                 </a>
             </li>
             <li class="nav-item menu-items">
-                <a class="nav-link" href="{{ url('/view_product') }}">
+                <a class="nav-link" href="{{ route('show_add_product') }}">
                     <i class="fas fa-plus"></i>
                     <span class="menu-title">Add Product</span>
                 </a>

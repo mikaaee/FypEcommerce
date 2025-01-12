@@ -201,7 +201,9 @@
         <!-- Product Details Section -->
         <main class="product-details">
             <div class="product-image">
-                <img src="{{ asset('product/' . $product->image) }}" alt="image">
+                <img src="{{ asset('storage/product/' . $product->image) }}" alt="Product Image">
+
+
             </div>
             <div class="product-info">
                 <h2>{{ $product->title }}</h2> 

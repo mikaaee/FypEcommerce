@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\category; //wajib ada utk category
-use App\Models\Product; //wajib ada utk product
+use App\Models\product; //wajib ada utk product
 
 class AdminController extends Controller
 {
@@ -104,55 +104,51 @@ class AdminController extends Controller
         $data->save();
 
         // Redirect back with a success message
-        return redirect()->route('view_category')->with('message', 'Category updated successfully!');
+        return redirect()->back()->with('message', 'Category updated successfully!');
 
     }
+
 
     public function view_product()
     {
         $category = category::all();
-        return view('admin.product', compact('category')); //will lead to add product page
+        return view('admin.show_product', compact('category')); //will lead to add product page
     }
 
     public function add_product(Request $request)
     {
-        // Validate the request
-        $request->validate([
+        // Validate incoming data
+        $validated = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
             'price' => 'required|numeric',
             'quantity' => 'required|integer',
-            'category' => 'required|string|max:255',
-            'image' => 'required|image|mimes:jpg,jpeg,png,gif|max:2048', // Validate image
+            'category' => 'required|string',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        // Create a new product instance
+        // Handle file upload
+        $imagePath = $request->file('image')->store('public/products');
+
+        // Create a new product
         $product = new Product();
-        $product->title = $request->title;
-        $product->description = $request->description;
-        $product->price = $request->price;
-        $product->quantity = $request->quantity;
-        $product->category = $request->category;
+        $product->title = $validated['title'];
+        $product->description = $validated['description'];
+        $product->price = $validated['price'];
+        $product->quantity = $validated['quantity'];
+        $product->category = $validated['category'];
+        $product->image = $imagePath; // Save the file path to the database
 
-        // Handle the image upload
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $imagename = time() . '.' . $image->getClientOriginalExtension();
-
-            // Move the image to the public/product directory
-            $image->move(public_path('product'), $imagename);
-
-            // Save the image name (not the full path) to the product model
-            $product->image = $imagename;
-        }
-
-        // Save the product to the database
         $product->save();
 
-        // Redirect back with success message
-        return redirect()->back()->with('message', 'Product Added Successfully');
+        // Redirect with success message
+        return redirect()->back()->with('message', 'Product added successfully!');
     }
-
+    public function showAddProductPage()
+    {
+        $category = category::all(); // Fetch all categories from the database
+        return view('admin.add_product', compact('category')); // Pass the category data to the view
+    }
 
 
     public function show_product()

@@ -152,11 +152,18 @@
                         <h2 class="h2_font">Add Product</h2>
 
 
-                        <form class="form" action="{{ url('/add_product') }}" method="POST"
-                            enctype="multipart/form-data">
-                            <!--POST (upload datas to db), enctype(upload file)!-->
-
+                        <form action="{{ route('add_product.submit') }}" method="POST" enctype="multipart/form-data">
                             @csrf
+                        
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
 
                             <div class="div_design">
                                 <label class="label">Product Title : </label>

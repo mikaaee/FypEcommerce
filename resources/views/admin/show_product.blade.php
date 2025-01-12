@@ -150,7 +150,10 @@
                                     <td>{{ $product->quantity }}</td>
                                     <td>{{ $product->price }}</td>
                                     <td>
-                                        <img class="img" src="/product/{{ $product->image }}">
+                                        <img src="{{ asset('storage/product/' . $product->image) }}" alt="Product Image">
+
+
+
                                     </td>
 
                                     <td>

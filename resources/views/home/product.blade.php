@@ -30,7 +30,9 @@
                             </div>
                         </div>
                         <div class="img-box">
-                            <img src="{{ asset('product/' . $product->image) }}" alt="">
+                            <img src="{{ asset('storage/product/' . $product->image) }}" alt="Product Image">
+
+
                         </div>
                         <div class="detail-box">
                             <h5>

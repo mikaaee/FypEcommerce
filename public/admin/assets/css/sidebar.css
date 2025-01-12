@@ -1,0 +1,85 @@
+/* Body Font */
+.body {
+    font-family: 'Gabarito', sans-serif !important;
+}
+
+/* Dropdown Menu Hover Styling */
+.dropdown-menu a.dropdown-item:hover {
+    background-color: #fff !important; /* White background on hover */
+    color: #000 !important; /* Black text on hover */
+}
+
+.dropdown-menu a.dropdown-item:hover .preview-thumbnail .preview-icon {
+    background-color: #fff !important; /* Match the hover background */
+    color: #000 !important; /* Black icon color */
+}
+
+/* Default Nav Link Styling */
+.nav-item .nav-link {
+    font-size: 19px;
+    color: white !important; /* Default white text */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover State for Nav Links */
+.nav-item .nav-link:hover {
+    background-color: white !important; /* White background */
+    color: black !important; /* Black text */
+}
+
+/* Menu Icon Styling */
+.nav-item .menu-icon i {
+    color: white !important; /* Default white color */
+    font-size: 26px !important;
+}
+
+/* Change Menu Icon Color on Hover */
+.nav-item .nav-link:hover .menu-icon i {
+    color: black !important;
+    font-size: 28px;
+}
+
+/* Disable Hover Effect for Navigation Menu Item */
+.nav-item.nav-category {
+    pointer-events: none !important; /* Disable hover interaction */
+}
+
+.nav-item.nav-category:hover {
+    background-color: transparent !important; /* Prevent background change */
+    color: #fff !important; /* Keep text color white */
+    cursor: default !important; /* Prevent pointer cursor */
+}
+
+/* Sidebar Styling for Individual Menu Items */
+.sidebar .nav .nav-item {
+    position: relative; /* Needed for submenu positioning */
+}
+
+/* Adjust the individual menu item styles */
+.sidebar .nav .nav-item .nav-link {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 10px;
+    color: #6c7293;
+    height: 46px;
+    border-radius: 0px 100px 100px 0px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect for the individual menu items */
+.sidebar .nav .nav-item .nav-link:hover {
+    background-color: white !important;
+    color: black !important;
+}
+
+/* For menu icons: Maintain color consistency */
+.sidebar .nav .nav-item .menu-icon i {
+    color: white !important;
+    font-size: 26px !important;
+}
+
+/* Change menu icon color on hover */
+.sidebar .nav .nav-item .nav-link:hover .menu-icon i {
+    color: black !important;
+    font-size: 28px;
+}
